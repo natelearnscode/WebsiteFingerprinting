@@ -8,11 +8,9 @@
         Hello World
     </body>
     <script>
-        import FingerpintJS from '@fingerprintjs/fingerprintjs-pro'
 
-        const fpPromise = FingerprintJS.load({
-            apiKey: 'hKIUEQzYPom1jWu5TzDL'
-        })
+        const fpPromise = import('https://fpcdn.io/v3/hKIUEQzYPom1jWu5TzDL')
+        .then(FingerpintJS => FingerpintJS.load())
 
         fpPromise
             .then(fp => fp.get())
